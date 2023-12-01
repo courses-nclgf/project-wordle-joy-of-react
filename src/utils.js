@@ -4,7 +4,7 @@ export const sample = (arr) => {
 
 export const range = (start, end, step = 1) => {
   let output = [];
-  if (typeof end === 'undefined') {
+  if (typeof end === "undefined") {
     end = start;
     start = 0;
   }
@@ -13,3 +13,13 @@ export const range = (start, end, step = 1) => {
   }
   return output;
 };
+
+export const str = (length = 0, char = " ") => {
+  let str = "";
+  for (let i = 0; i < length; i++) {
+    str += char;
+  }
+  return str;
+};
+
+export const id = () => crypto.randomUUID();

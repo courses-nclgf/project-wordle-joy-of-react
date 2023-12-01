@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { sample } from "../../utils";
+import { sample, id } from "../../utils";
 import { WORDS } from "../../data";
 import GuessInput from "../GuessInput";
 import GuessResults from "../GuessResults";
@@ -25,7 +25,7 @@ function Game() {
       ...guesses,
       {
         value: guess,
-        id: crypto.randomUUID(),
+        id: id(),
       },
     ]);
     setGuess("");

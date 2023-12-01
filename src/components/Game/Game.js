@@ -3,6 +3,7 @@ import { sample, id } from "../../utils";
 import { WORDS } from "../../data";
 import GuessInput from "../GuessInput";
 import GuessResults from "../GuessResults";
+import { checkGuess } from "../../game-helpers";
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -20,15 +21,14 @@ function Game() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({ guess });
+    setGuess("");
     setGuesses([
       ...guesses,
       {
-        value: guess,
+        value: checkGuess(guess, answer),
         id: id(),
       },
     ]);
-    setGuess("");
   };
   return (
     <>

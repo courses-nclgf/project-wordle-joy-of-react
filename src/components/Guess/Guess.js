@@ -1,12 +1,15 @@
 import React from "react";
 
-function Guess({ value, id }) {
+function Cell({ letter, status }) {
+  return <span className={`cell ${status}`}>{letter}</span>;
+}
+
+function Guess({ value }) {
+  console.log(value);
   return (
-    <p key={id} className="guess">
-      {value.split("").map((letter, i) => (
-        <span key={i} className="cell">
-          {letter}
-        </span>
+    <p className="guess">
+      {value.map(({ letter, status }, id) => (
+        <Cell key={id} letter={letter} status={status} />
       ))}
     </p>
   );

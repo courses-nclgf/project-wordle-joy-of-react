@@ -14,6 +14,14 @@ export const range = (start, end, step = 1) => {
   return output;
 };
 
+export const fill = (length, value) => {
+  let output = [];
+  for (let i = 0; i < length; i++) {
+    output.push(value);
+  }
+  return output;
+};
+
 export const str = (length = 0, char = " ") => {
   let str = "";
   for (let i = 0; i < length; i++) {
